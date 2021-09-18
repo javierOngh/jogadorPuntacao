@@ -1,0 +1,69 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		string []nomeJoga = new string[10];
+		bool res = false;
+		bool resdo = false;
+		string respo;
+		while (true){
+			
+			//Aqui codigo do jogo
+    Console.WriteLine("Bem-vindo na lista de jogadores ");
+    Console.WriteLine("Voce pode inserir ate 10 jogadores ");
+	Console.WriteLine("Escreva a quantidade de jogadores ");
+	 int quan = int.Parse(Console.ReadLine());
+		while(quan<1 || quan>10){
+		Console.WriteLine("Nao pode ser menor de 0 o maior 10");
+	 	quan = int.Parse(Console.ReadLine());
+		}
+		int i = 0;	
+		 Console.WriteLine(" insira o nome por favor ");
+		 nomeJoga[i] = Console.ReadLine();
+		string eval= nomeJoga[i];
+   		for(i = 1 ;i < quan; i++){
+			Console.WriteLine(" insira o nome por favor ");
+		 	nomeJoga[i] = Console.ReadLine();
+			string repee = nomeJoga[i]; 
+			while(eval==repee){
+			 Console.WriteLine(" nome igual ");
+		     Console.WriteLine(" insira um nome diferente por favor ");
+		 	 nomeJoga[i] = Console.ReadLine();
+			 repee = nomeJoga[i];
+			}
+			while(nomeJoga.Equals(" ")){
+			Console.WriteLine(" nome ja inserido ou vazio, escreva outro nome");
+			nomeJoga[i] = Console.ReadLine();
+			}
+					
+		}
+			foreach(string nome in nomeJoga){
+				
+				Console.WriteLine("nome "+nome);
+			}
+			
+			
+		Console.WriteLine(" Deseja acrecentar mais nomes ?");
+			respo = Console.ReadLine();
+			res = respo.Equals("sim");
+			resdo = respo.Equals("nao");
+			if(!resdo && !res){
+				Console.WriteLine("Resposta tem que ser Sim ou Nao ");
+				if(res){
+				Console.WriteLine(" ");
+				}
+				
+			}
+			if(!res){
+					Console.WriteLine("sua resposta  "+respo);
+			}
+			if(resdo){
+					break;
+				}
+		}
+		Console.WriteLine("Brigado por usar nosso sistema, ate logo!");
+
+	}
+}
